@@ -1,0 +1,61 @@
+/////////////////////////////////////////////////////////////////////////////
+// $Id: SecondaryBCI2000Controller.h 9216 2026-01-01 14:20:40Z mellinger $
+// Author: mellinger@neurotechcenter.org
+//
+// $BEGIN_BCI2000_LICENSE$
+// 
+// This file is part of BCI2000, a platform for real-time bio-signal research.
+// [ Copyright (C) 2000-2026: BCI2000 team and many external contributors ]
+// 
+// BCI2000 is free software: you can redistribute it and/or modify it under the
+// terms of the GNU General Public License as published by the Free Software
+// Foundation, either version 3 of the License, or (at your option) any later
+// version.
+// 
+// BCI2000 is distributed in the hope that it will be useful, but
+//                         WITHOUT ANY WARRANTY
+// - without even the implied warranty of MERCHANTABILITY or FITNESS FOR
+// A PARTICULAR PURPOSE.  See the GNU General Public License for more details.
+// 
+// You should have received a copy of the GNU General Public License along with
+// this program.  If not, see <http://www.gnu.org/licenses/>.
+// 
+// $END_BCI2000_LICENSE$
+/////////////////////////////////////////////////////////////////////////////
+#ifndef SECONDARY_BCI2000_CONTROLLER_H
+#define SECONDARY_BCI2000_CONTROLLER_H
+
+#include "Environment.h"
+#include "BCI2000Remote.h"
+#include <vector>
+#include <memory>
+
+class SecondaryBCI2000Controller : public EnvironmentExtension
+{
+public:
+    SecondaryBCI2000Controller();
+    ~SecondaryBCI2000Controller();
+
+protected:
+    void AutoConfig() override;
+    void Publish() override;
+    void Preflight() const override;
+    void Initialize() override;
+    void StartRun() override;
+    void StopRun() override;
+    void Process() override;
+    void Halt() override;
+    void Halt2() override { Halt(); }
+
+private:
+    bool mEnabled;
+    int mFilePart;
+    mutable std::vector<std::unique_ptr<BCI2000Remote>> mConnections;
+};
+
+#endif // SECONDARY_BCI2000_CONTROLLER_H
+
+
+
+
+

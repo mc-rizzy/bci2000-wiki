@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+<meta charset="UTF-8"/>
+<title>Contributions:SerialInterface - BCI2000 Help</title>
+<link rel='shortcut icon' href='../../rsrc/favicon.ico' />
+<style type='text/css'>
+html { font-size:95%; font-family:arial,helvetica,sans-serif }
+.printfooter { display:none }
+#tocmain { font-size:81%; font-weight:bold; color:grey; background-color:white; border:1px solid black; padding:1em; z-index:10; position:fixed; left:-1px; top:-1px; width:150px; }
+#tocmain a { color:black; text-decoration:none }
+#tocmain ul { margin:0 0 0 0.4em; padding:0.1em 0 0 0.1em; list-style-position:outside; list-style-type:disc }
+#tocmain li { text-indent:0; margin:0 0 0 1em; padding: 0 0 0 0 }
+#tocmain p { margin:0; padding:0.1em 0 0 0.1em }
+#tocmain .toc1 { margin-left:1.25em; }
+#tocmain .toc2 { margin-left:2.25em; }
+#tocmain .toc3 { margin-left:3.25em; }
+#article { font-size:91%; position:absolute; left:200px; right:0; padding:1em; margin:0 }
+</style>
+</head>
+<body>
+ <div id='tocmain'>
+ <a href='Main_Page.html'><img src='../../rsrc/bci2000logo.svg' alt='[Main Page]' /></a> <hr class="sep" /><p class="toc0"><a href="User_Tutorial%253ABCI2000_Tour.html">GettingStarted</a></p><ul></ul><p class="toc0"><a href="User_Reference%253AContents.html">User Manual</a></p><ul></ul><p class="toc0"><a href="Technical_Reference%253AContents.html">Technical Reference</a></p><ul></ul><p class="toc0"><a href="Programming_Reference%253AContents.html">Programming Manual</a></p><ul></ul><p class="toc0"><a href="Contributions%253AContents.html">Contributions</a></p><ul><li class="toc1"><a href="Contributions%253AADCs.html">Data Acquisition</a></li><li class="toc1"><a href="Contributions%253AFileWriters.html">File Formats</a></li><li class="toc1"><a href="Contributions%253ASignalProcessing.html">Signal Processing</a></li><li class="toc1"><a href="Contributions%253AApplications.html">Applications</a></li><li class="toc1"><a href="Contributions%253ATools.html">Tools</a></li></ul><hr class="sep" /><p class="toc0"><a href="BCI2000_Glossary.html">BCI2000 Glossary</a></p> </div>
+ <div id='article'>
+ <h1 class = "pagetitle">SerialInterface</h1>
+ <p class = "subtitle">Contributions</p>
+ <hr class = "sep" />
+ <div id="mw-content-text" class="mw-body-content mw-content-ltr" lang="en" dir="ltr"><div class="mw-parser-output"><div id="toc" class="toc" role="navigation" aria-labelledby="mw-toc-heading"><input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none" /><div class="toctitle" lang="en" dir="ltr"><h2 id="mw-toc-heading">Contents</h2><span class="toctogglespan"><label class="toctogglelabel" for="toctogglecheckbox"></label></span></div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="Contributions%253ASerialInterface.html#Synopsis"><span class="tocnumber">1</span> <span class="toctext">Synopsis</span></a></li>
+<li class="toclevel-1 tocsection-2"><a href="Contributions%253ASerialInterface.html#Location"><span class="tocnumber">2</span> <span class="toctext">Location</span></a></li>
+<li class="toclevel-1 tocsection-3"><a href="Contributions%253ASerialInterface.html#Versioning"><span class="tocnumber">3</span> <span class="toctext">Versioning</span></a>
+<ul>
+<li class="toclevel-2 tocsection-4"><a href="Contributions%253ASerialInterface.html#Authors"><span class="tocnumber">3.1</span> <span class="toctext">Authors</span></a></li>
+<li class="toclevel-2 tocsection-5"><a href="Contributions%253ASerialInterface.html#Version_History"><span class="tocnumber">3.2</span> <span class="toctext">Version History</span></a></li>
+<li class="toclevel-2 tocsection-6"><a href="Contributions%253ASerialInterface.html#Source_Code_Revisions"><span class="tocnumber">3.3</span> <span class="toctext">Source Code Revisions</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-7"><a href="Contributions%253ASerialInterface.html#Functional_Description"><span class="tocnumber">4</span> <span class="toctext">Functional Description</span></a></li>
+<li class="toclevel-1 tocsection-8"><a href="Contributions%253ASerialInterface.html#Enabling_SerialInterface"><span class="tocnumber">5</span> <span class="toctext">Enabling SerialInterface</span></a></li>
+<li class="toclevel-1 tocsection-9"><a href="Contributions%253ASerialInterface.html#Defining_BCI2000_Parameters_and_Events_from_the_Widget"><span class="tocnumber">6</span> <span class="toctext">Defining BCI2000 Parameters and Events from the Widget</span></a></li>
+<li class="toclevel-1 tocsection-10"><a href="Contributions%253ASerialInterface.html#Parameters"><span class="tocnumber">7</span> <span class="toctext">Parameters</span></a>
+<ul>
+<li class="toclevel-2 tocsection-11"><a href="Contributions%253ASerialInterface.html#SerialPort"><span class="tocnumber">7.1</span> <span class="toctext">SerialPort</span></a></li>
+<li class="toclevel-2 tocsection-12"><a href="Contributions%253ASerialInterface.html#PublishCommand"><span class="tocnumber">7.2</span> <span class="toctext">PublishCommand</span></a></li>
+<li class="toclevel-2 tocsection-13"><a href="Contributions%253ASerialInterface.html#StartCommand"><span class="tocnumber">7.3</span> <span class="toctext">StartCommand</span></a></li>
+<li class="toclevel-2 tocsection-14"><a href="Contributions%253ASerialInterface.html#StopCommand"><span class="tocnumber">7.4</span> <span class="toctext">StopCommand</span></a></li>
+<li class="toclevel-2 tocsection-15"><a href="Contributions%253ASerialInterface.html#ParameterUpdateCommand"><span class="tocnumber">7.5</span> <span class="toctext">ParameterUpdateCommand</span></a></li>
+<li class="toclevel-2 tocsection-16"><a href="Contributions%253ASerialInterface.html#SerialInputs"><span class="tocnumber">7.6</span> <span class="toctext">SerialInputs</span></a></li>
+<li class="toclevel-2 tocsection-17"><a href="Contributions%253ASerialInterface.html#SkipUnrecognizedBytes"><span class="tocnumber">7.7</span> <span class="toctext">SkipUnrecognizedBytes</span></a></li>
+<li class="toclevel-2 tocsection-18"><a href="Contributions%253ASerialInterface.html#SerialOutputs"><span class="tocnumber">7.8</span> <span class="toctext">SerialOutputs</span></a></li>
+<li class="toclevel-2 tocsection-19"><a href="Contributions%253ASerialInterface.html#ElseIf"><span class="tocnumber">7.9</span> <span class="toctext">ElseIf</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-20"><a href="Contributions%253ASerialInterface.html#State_Variables"><span class="tocnumber">8</span> <span class="toctext">State Variables</span></a></li>
+<li class="toclevel-1 tocsection-21"><a href="Contributions%253ASerialInterface.html#See_also"><span class="tocnumber">9</span> <span class="toctext">See also</span></a></li>
+</ul>
+</div>
+
+<h2><span class="mw-headline" id="Synopsis">Synopsis</span></h2>
+<p>An extension that allows flexible communication to and from serial-port devices such as programmable microcontrollers (e.g. Arduino, Teensy, Pico, etc.)
+</p>
+<h2><span class="mw-headline" id="Location">Location</span></h2>
+<p><a rel="nofollow" class="external free" href="http://www.bci2000.org/svn/trunk/src/contrib/Extensions/SerialInterface">http://www.bci2000.org/svn/trunk/src/contrib/Extensions/SerialInterface</a>
+</p>
+<h2><span class="mw-headline" id="Versioning">Versioning</span></h2>
+<h3><span class="mw-headline" id="Authors">Authors</span></h3>
+<p>Jeremy Hill (hill@neurotechcenter.org)
+</p><p><br />
+</p>
+<h3><span class="mw-headline" id="Version_History">Version History</span></h3>
+<ul><li>2023-08-10: Initial public release</li>
+<li>2025-06-13: SerialInput parameter added, expanding the options for two-way communication.</li></ul>
+<h3><span class="mw-headline" id="Source_Code_Revisions">Source Code Revisions</span></h3>
+<ul><li>Initial development: r7523</li>
+<li>Known to compile under: r8888</li>
+<li>Broken since: --</li></ul>
+<h2><span class="mw-headline" id="Functional_Description">Functional Description</span></h2>
+<p>Among the biosignal acquisition devices supported by BCI2000, a few allow "digital output", i.e. the generation of TTL pulses that might be used to trigger or otherwise synchronize with other devices; most, however, do not offer this functionality. Furthermore, many devices support <i>acquisition</i> of TTL pulses and other auxiliary information alongside biosignal data; however, some devices lack even this capability.
+</p><p>Where such functionality is lacking, one flexible option for adding it to your system is to build and program a custom solution based on a microcontroller such as an Arduino, Teensy or Pico (hereafter referred to as a "widget").  The SerialInterface extension allows BCI2000 to interface with such widgets.
+</p><p>The primary intended purpose of the SerialInterface is to send arbitrary byte strings to a widget over a serial port whenever specified BCI2000 <a href="User_Reference%253AExpression_Syntax.html" title="User Reference:Expression Syntax">Expressions</a> become true—this is a simple way in which digital-output functionality may be supplied for hardware that lacks it. This mechanism could also allow your BCI system to control almost anything you can imagine attaching to a custom microcontroller.  Since the outgoing byte strings can be configured arbitrarily, you might possibly be able to make this work even if you cannot (re-)program the widget yourself.
+</p><p>A secondary function of the SerialInterface is to receive and log <a href="Programming_Reference%253AEvents.html" title="Programming Reference:Events">Event</a> information. This can be done in two ways: either by supplying a fixed set of byte strings that BCI2000 should respond to when it receives them from the widget, or by having the widget send actual BCI2000 event descriptors. For the latter, the widget must be programmed to output strings in the format that BCI2000 will understand. If you have the ability to re-program your widget, then you may also optionally make the widget define its own BCI2000 Parameters and Events. Together, these mechanisms allow information from arbitrary sensors to be sent to BCI2000, mediated by a programmable widget.
+</p><p>An example BCI2000-compatible microcontroller sketch, for the Arduino IDE, is provided in <a rel="nofollow" class="external text" href="https://bci2000.org/svn/trunk/src/contrib/Extensions/SerialInterface/TTLExampleSketch/">the TTLExampleSketch subdirectory</a>. It makes use of <a rel="nofollow" class="external text" href="https://www.arduino.cc/reference/en/libraries/keyhole">the Keyhole library</a>, which can be installed via the IDE's library manager and which makes it easy for sketches to respond to serial-port commands and to allow their variables to be read and written.
+</p><p>Note that the SerialInterface Extension is intended to provide <i>auxiliary</i> input/output functionality to source modules that acquire their primary signal elsewhere.  If you also want to acquire the <i>primary</i> signal from the same widget, you should use the closely-related <a href="Contributions%253ASerialWidgetADC.html" title="Contributions:SerialWidgetADC">SerialWidgetADC</a>, which is part of the SerialWidget signal-source module and which requires a more-sophisticated sketch.
+</p>
+<h2><span class="mw-headline" id="Enabling_SerialInterface">Enabling SerialInterface</span></h2>
+<p><a href="User_Reference%253ALogging_Input.html" title="User Reference:Logging Input">Like all Extensions</a>, SerialInterface is only available if your signal source module was compiled with the appropriate CMake flag enabled: in this case, <code>EXTENSIONS_SERIALINTERFACE=ON</code>.
+</p><p>Then, when you launch BCI2000, SerialInterface must be enabled by supplying a value for the <code>--SerialPort</code> parameter <a href="User_Reference%253AModule_Command_Line_Options.html#Specifying_Options" title="User Reference:Module Command Line Options">on the command-line</a>. For example, in a <a href="User_Reference%253AOperator_Module_Scripting.html" title="User Reference:Operator Module Scripting">BCI2000 script</a>, you might use the line:
+</p>
+<pre>start executable SignalGenerator --local --SerialPort=COM4:baud=9600,dtr=on
+</pre>
+<p>In the example above, note that a suffix has been appended to the usual serial-port address <code>COM4</code>, attached by a colon. In this optional suffix, you can specify a comma-separated list of options as understood by the Windows <code>MODE</code> command (see <a rel="nofollow" class="external text" href="https://learn.microsoft.com/en-us/windows/win32/api/winbase/nf-winbase-buildcommdcba#parameters">Microsoft's documentation for the configuration string passed to the BuildCommDCBA() function</a>).  These options may or may not be necessary for your widget—for example, we have found that the Teensy microcontroller does not seem to care whether the <code>dtr</code> option is on or off; however, the Pico will not work properly unless this option is explicitly turned on, whereas the ItsyBitsy M4 will fail to communicate if it <i>is</i> turned on.
+</p>
+<h2><span class="mw-headline" id="Defining_BCI2000_Parameters_and_Events_from_the_Widget">Defining BCI2000 Parameters and Events from the Widget</span></h2>
+<p>If you want your widget to define its own BCI2000 Parameters and Events, the widget must be programmed to send this information to BCI2000 on command, and you can specify exactly what sequence of bytes the command comprises. To ensure that the chosen command is sent to the widget during the <a href="Programming_Reference%253AGenericFilter_Class.html#Publish" title="Programming Reference:GenericFilter Class">"Publish" phase</a> of BCI2000 startup, you should specify it as the <code>--PublishCommand</code> parameter, again on the command line:
+</p>
+<pre>start executable SignalGenerator --local --SerialPort=COM4:baud=9600,dtr=on --PublishCommand=publish\n
+</pre>
+<p>The particular byte sequence <code>publish\n</code> works with <code>TTLExampleSketch.ino</code>. 
+</p><p>When the widget receives the publish command, it must reply with one or more lines of text.  BCI2000 will attempt to interpret any line containing the <code>=</code> character as a <a href="Technical_Reference%253AParameter_Definition.html" title="Technical Reference:Parameter Definition">Parameter definition</a>, and any other non-empty line as an <a href="Programming_Reference%253AEvents.html#Implementation" title="Programming Reference:Events">Event definition</a>.   The widget must send a blank line (terminated with <code>\n</code> or <code>\r\n</code>) to signify the end of the definitions (if your sketch omits this, BCI2000 will hang indefinitely, waiting for more definitions).
+</p><p>A widget Parameter definition may be specified as <code>(readonly)</code>, in which case the Parameter may be of any type and will not be editable by the user. Such read-only parameters are a means by which the widget can make annotations that will be stored in data files' parameter headers (e.g. information about microcontroller model or sketch version).  On the other hand, if the <code>(readonly)</code> flag is <i>not</i> found in the Parameter definition comment, the Parameter will actually be configurable by the user: in this case, only <code>int</code>, <code>float</code> and <code>string</code> Parameters are allowed.  If the widget defines configurable Parameters, Parameter values will be sent to the widget when the user presses "Set Config", using strings of the following format:
+</p>
+<pre>Foo=1\n
+Bar=3.0\n
+Boo="this is a string parameter value"\n
+
+</pre>
+<p>In that case, your widget sketch must be able to interpret such commands (the <a rel="nofollow" class="external text" href="https://www.arduino.cc/reference/en/libraries/keyhole">Keyhole</a> library makes this easy, as shown in the example sketch).
+</p><p>You may also chose to specify a <b>ParameterUpdateCommand</b>: if so, the specified bytes will be sent to the widget in the <a href="Programming_Reference%253AGenericFilter_Class.html#StopRun" title="Programming Reference:GenericFilter Class">"StopRun" phase</a>, to request updates to the values of widget-defined parameters. When the widget receives the specified parameter-update command, just as with the publish command, it must reply with a sequence of lines terminated by a blank line.  As before, if you choose to use this option, BCI2000 will hang until it receives that final blank line.  This time, however, the non-blank lines are expected to have the same syntax as the lines that were sent <i>to</i> the widget on Set Config, e.g. <code>Foo=123</code> or <code>Boo="some string"</code>.  Note that you can only update parameters that the widget itself has previously declared, and you cannot update a parameter that was declared as <code>(readonly)</code>.
+</p>
+<h2><span class="mw-headline" id="Parameters">Parameters</span></h2>
+<p>If enabled using the <code>--SerialPort</code> command-line parameter, the full set of SerialInterface's parameters (described below) will appear in the Source tab of BCI2000's Config window. In addition, any Parameters defined by the widget itself, in response to a <code>--PublishCommand</code>, will appear in whichever tabs and sections their definitions dictate.
+</p><p>Note that, wherever a SerialInterface Parameter specifies a byte string to be sent to the widget, the byte string may be expressed using backslash escapes familiar to the C/C++ or Python programmer: <code>\n</code>, <code>\r</code>, <code>\t</code>, <code>\0</code>, <code>\\</code> and <code>\xNN</code>  are all recognized, where <code>NN</code> stands for a pair of hex digits (these are interpreted like Python, not like C—in other words, the maximum expected number of digits is 2). Other backslash escapes are not supported (so, use <code>\x07</code> instead of <code>\a</code>, use<code>\x0B</code> instead of <code>\v</code>, etc.).  If your widget sketch uses the Keyhole library, commands are expected to end with either a newline <code>\n</code> or a semicolon <code>;</code> (but in a BCI2000 script, semicolons mean something to the script interpreter, so you would have to ensure they're used in quotes).
+</p>
+<h3><span class="mw-headline" id="SerialPort">SerialPort</span></h3>
+<p>This string specifies the port address, optionally followed by a colon and a comma-delimited sequence of serial port options as described above. This must be <a href="User_Reference%253AModule_Command_Line_Options.html#Specifying_Options" title="User Reference:Module Command Line Options">specified on the command-line when the signal source module is launched</a> and its value cannot be changed without quitting and relaunching BCI2000. If this parameter is absent or its value is empty, the SerialInterface extension is entirely disabled.
+</p>
+<h3><span class="mw-headline" id="PublishCommand">PublishCommand</span></h3>
+<p>This optional string specifies the sequence of bytes that should be sent by BCI2000 to request Parameter and Event definitions from the widget. If used, this must be <a href="User_Reference%253AModule_Command_Line_Options.html#Specifying_Options" title="User Reference:Module Command Line Options">specified on the command-line when the signal source module is launched</a>. Its value cannot be changed without quitting and relaunching BCI2000.
+</p>
+<h3><span class="mw-headline" id="StartCommand">StartCommand</span></h3>
+<p>If specified, this sequence of bytes is sent to the widget whenever a run is started (e.g. when Start or Resume is pressed).
+With <code>TTLExampleSketch.ino</code>, the string <code>mute=0\n</code> can be used, although the sketch will work on most microcontrollers even without a StartCommand and StopCommand.
+</p>
+<h3><span class="mw-headline" id="StopCommand">StopCommand</span></h3>
+<p>If specified, this sequence of bytes is sent to the widget whenever a run stops (e.g. when Suspend is pressed) and also when Set Config is pressed.
+With <code>TTLExampleSketch.ino</code>, the string <code>mute=1\n</code> can be used, although the sketch will work on most microcontrollers even without a StartCommand and StopCommand.
+</p>
+<h3><span class="mw-headline" id="ParameterUpdateCommand">ParameterUpdateCommand</span></h3>
+<p>If specified, this sequence of bytes is sent to the widget whenever a run stops (e.g. when Suspend is pressed).
+As with the <b>PublishCommand</b>, BCI2000 will then expect the widget to reply with a sequence of lines, terminated by a blank line. Each line is expected to be of the format <code>ParameterName = VALUE</code>, where <code>ParameterName</code> must denote a writeable parameter previously declared by the widget, and <code>VALUE</code> can be a simple numeric value or string (quoted and backslash-escaped if necessary).
+This allows new parameter values to be carried over from one run to the next.
+</p>
+<h3><span class="mw-headline" id="SerialInputs">SerialInputs</span></h3>
+<p>This matrix parameter gives BCI2000 the limited ability to respond to serial-port messages sent by the widget, even if you cannot re-program your widget.
+</p><p>If not empty, the matrix must have four columns.  The first column contains (backslash-escaped) byte strings that the widget might send to BCI2000. The second column contains names of State Variables that have been declared as <a href="Programming_Reference%253AEvents.html" title="Programming Reference:Events">Events</a> (perhaps using <a href="User_Reference%253AOperator_Module_Scripting.html#ADD_EVENT_&lt;name&gt;_&lt;bit_width&gt;_&lt;initial_value&gt;" title="User Reference:Operator Module Scripting"><code>ADD EVENT</code></a> in your launcher script).  The third column contains the integer value that should be assigned to the Event when the byte string is received.   In the fourth column, the entry should either be left blank (in which case, the Event will remain at the assigned value until it is changed again) or set to 0 (in which case the Event is transient, remaining at the assigned value only for one sample before automatically returning to 0).  Thus, the second, third and fourth columns can be read from left to right as a <a href="Programming_Reference%253AEvents.html#Descriptor_Syntax" title="Programming Reference:Events">BCI2000 Event descriptor</a>, like <code>MyEvent 123</code> or <code>MyEvent 123 0</code>
+</p><p>A given byte string is allowed to appear more than once in the table, to trigger multiple Events simultaneously.  The Event name (second column) is allowed to be blank, to enable a particular byte string to be recognized but ignored.
+</p><p>Note that the <b>SerialInputs</b> mechanism is designed to be very generic, and as such it is not necessarily possible to tailor it to the particular protocol your widget uses. For example, BCI2000 will not know how the widget likes to terminate messages unless you explicitly include the terminator bytes (so, if <code>shutdown</code> and <code>shutdown-gracefully</code> are both configured, the longer command will never be recognized: BCI2000 will greedily recognize and obey <code>shutdown</code> before attempting to move on to <code>-gracefully</code>). The limitations of the <b>SerialInputs</b> table also make themselves felt if the widget sends a byte string that you have omitted from the table. Then, one of two compromises must be accepted (see the description of the <b>SkipUnrecognizedBytes</b> parameter, below). In general, it is not possible to support a serial protocol that includes variable values (unless you create a separate <b>SerialInputs</b> row for every possible combination of values).
+</p>
+<h3><span class="mw-headline" id="SkipUnrecognizedBytes">SkipUnrecognizedBytes</span></h3>
+<p>This boolean parameter determines what happens if you are using the <b>SerialInputs</b> table to recognize messages from the widget, and the widget sends you a string that is not recognized. Either choice can have unfortunate consequences, depending on your widget's protocol.
+</p><p>If the <b>SkipUnrecognizedBytes</b> parameter is set to false (unchecked), then the data coming from the widget will continue to build into an ever-lengthening unrecognized command: BCI2000 will not recognize another <b>SerialInputs</b> byte string at all until the SerialInterface is reset (which happens at the start of a run if SerialInterface is running as an Extension, or when Set Config is pressed if you are running SerialWidgetADC).
+</p><p>If <b>SkipUnrecognizedBytes</b> is set to true (checked), then it will be possible to discard unrecognized bytes and match a known string, but with the danger that substrings of <i>un</i>recognized commands could be falsely recognized as commands. For example, if you have enabled <b>SkipUnrecognizedBytes</b>, and you have listed the command <code>arm_stimulator</code> in <b>SerialInputs</b> but <i>not</i> <code>disarm_stimulator</code>, and the widget then happens to send <code>disarm_stimulator</code>,  then BCI2000 will discard the bytes <code>dis</code> and recognize <code>arm_stimulator</code>, leading to the opposite of the intended effect. Clearly, this is a function of how the widget's protocol is designed.  To avoid such situations, you must either (a) ensure that the entries in the <b>SerialInputs</b> table exhaustively cover the repertoire of possible widget outputs (don't worry, if a known longer string gets matched, its substrings will not get matched), or (b) accept the consequences of disabling <b>SkipUnrecognizedBytes</b>. An even more robust option, if possible, is (c) to leave the <b>SerialInputs</b> table empty and re-program your widget to send BCI2000 event descriptors directly as text (see the <a href="Contributions%253ASerialInterface.html#State_Variables">State Variables</a> section, below).
+</p>
+<h3><span class="mw-headline" id="SerialOutputs">SerialOutputs</span></h3>
+<p>This matrix parameter gives BCI2000 the ability to send messages to the widget whenever specified contingencies are met.
+</p><p>If not empty, the matrix must have two columns.  The first column contains <a href="User_Reference%253AExpression_Syntax.html" title="User Reference:Expression Syntax">Expressions</a>. The second column contains (backslash-escaped) byte strings.  Expressions are evaluated at the beginning of each sample-block. If an Expression was previously zero and now evaluates to non-zero, the corresponding byte string is immediately sent to the widget.  In this way, you can link a BCI2000 State Variable to a widget command that, for example, causes a TTL pulse to be generated.
+</p><p>If you are using <code>TTLExampleSketch.ino</code>, you would associate Expressions with the commands <code>output=1\n</code> and  <code>output=0\n</code>. For example, let's assume you have defined your own State Variable called  <code>StimTrigger</code>. Then your <b>SerialOutputs</b> parameter might look as shown in the screenshot:
+</p><p><a href="https://www.bci2000.org/mediawiki/index.php/File:SerialOutputs.PNG" class="image"><img alt="SerialOutputs.PNG" src="../images/4/46/SerialOutputs.PNG" decoding="async" width="446" height="355" /></a>
+</p>
+<h3><span class="mw-headline" id="ElseIf">ElseIf</span></h3>
+<p>This parameter dictates the logic by which the rows of the <b>SerialOutputs</b> Parameter are processed.
+You may choose to process all rows on every sample-block (and potentially send all byte strings, one after the other);
+alternatively, you may choose to stop after the first matching row (so, on any given sample-block, at most one of the byte strings will be sent).
+</p>
+<h2><span class="mw-headline" id="State_Variables">State Variables</span></h2>
+<p>The SerialInterface does not define any State Variables or Events of its own, but will define any Events the widget tells it to define in response to a <code>--PublishCommand</code>.
+</p><p>During a run, a widget may change an Event value at any time by sending an <a href="Programming_Reference%253AEvents.html#Descriptor_Syntax" title="Programming Reference:Events">Event descriptor line</a>: usually, this is the name of the event, followed by a space, followed by the value expressed as decimal text, followed by a line-ending. Optionally, an Event descriptor may contain an additional space and a zero, to indicate an instantaneous transient event.  For example, <code>TTLExampleSketch.ino</code> will send 
+</p>
+<pre>TTLInput 1\r\n
+</pre>
+<p>whenever the voltage on its input pin changes from low to high, and
+</p>
+<pre>TTLInput 0\r\n
+PulseDurationMsec 123 0\r\n
+</pre>
+<p>whenever the voltage changes from high to low (where 123 is a place-holder for however long the input pulse in fact lasted, according to the widget's millisecond timer).
+</p><p>Note that it is not necessary for the Event in question to have been defined by the widget itself—it could have been added by one of the other filters and loggers, or in your <a href="User_Reference%253AOperator_Module_Scripting.html" title="User Reference:Operator Module Scripting">BCI2000 script</a> using <a href="User_Reference%253AOperator_Module_Scripting.html#ADD_EVENT_&lt;name&gt;_&lt;bit_width&gt;_&lt;initial_value&gt;" title="User Reference:Operator Module Scripting">an <code>ADD EVENT</code> command</a> before the <code>STARTUP SYSTEM</code> line. This means you do not necessarily have to implement the widget's response to a <code>--PublishCommand</code>, even if you are planning to use the widget to log Events.
+</p><p>If you cannot re-program the widget at all, you may still have some (limited) options for triggering Events in response to messages from the widget, via the <b>SerialInputs</b> parameter.
+</p>
+<h2><span class="mw-headline" id="See_also">See also</span></h2>
+<p><a href="Contributions%253ASerialWidgetADC.html" title="Contributions:SerialWidgetADC">Contributions:SerialWidgetADC</a>
+</p>
+<!-- 
+NewPP limit report
+Cached time: 20250820124901
+Cache expiry: 86400
+Reduced expiry: false
+Complications: [show‐toc]
+CPU time usage: 0.043 seconds
+Real time usage: 0.053 seconds
+Preprocessor visited node count: 86/1000000
+Post‐expand include size: 15/2097152 bytes
+Template argument size: 0/2097152 bytes
+Highest expansion depth: 2/100
+Expensive parser function count: 0/100
+Unstrip recursion depth: 0/20
+Unstrip post‐expand size: 0/5000000 bytes
+-->
+<!--
+Transclusion expansion time report (%,ms,calls,template)
+100.00%    0.000      1 -total
+-->
+
+<!-- Saved in parser cache with key wikidb-bci_:pcache:idhash:2604-0!canonical and timestamp 20250820124901 and revision id 11953.
+ -->
+</div></div><div class="printfooter">
+Retrieved from "<a dir="ltr" href="http://www.bci2000.org/mediawiki/index.php?title=Contributions:SerialInterface&amp;oldid=11953">http://www.bci2000.org/mediawiki/index.php?title=Contributions:SerialInterface&amp;oldid=11953</a>"</div>
+ </div>
+</body>
+</html>

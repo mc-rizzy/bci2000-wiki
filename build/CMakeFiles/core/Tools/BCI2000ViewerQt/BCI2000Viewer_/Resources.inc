@@ -1,0 +1,13 @@
+// File contents created by utils_add_resource -- re-run CMake to update this file
+#include "/Users/gooooooooooooner/Documents/bci2000-svn/build/CMakeFiles/core/Tools/BCI2000ViewerQt/BCI2000Viewer_/autoscale_96.png.res.cpp"
+#include "/Users/gooooooooooooner/Documents/bci2000-svn/build/CMakeFiles/core/Tools/BCI2000ViewerQt/BCI2000Viewer_/zoom-in-h_96.png.res.cpp"
+#include "/Users/gooooooooooooner/Documents/bci2000-svn/build/CMakeFiles/core/Tools/BCI2000ViewerQt/BCI2000Viewer_/zoom-out-h_96.png.res.cpp"
+#include "/Users/gooooooooooooner/Documents/bci2000-svn/build/CMakeFiles/core/Tools/BCI2000ViewerQt/BCI2000Viewer_/zoom-reset-h_96.png.res.cpp"
+#include "/Users/gooooooooooooner/Documents/bci2000-svn/build/CMakeFiles/core/Tools/BCI2000ViewerQt/BCI2000Viewer_/zoom-in-v_96.png.res.cpp"
+#include "/Users/gooooooooooooner/Documents/bci2000-svn/build/CMakeFiles/core/Tools/BCI2000ViewerQt/BCI2000Viewer_/zoom-out-v_96.png.res.cpp"
+#include "/Users/gooooooooooooner/Documents/bci2000-svn/build/CMakeFiles/core/Tools/BCI2000ViewerQt/BCI2000Viewer_/zoom-reset-v_96.png.res.cpp"
+#include "/Users/gooooooooooooner/Documents/bci2000-svn/build/CMakeFiles/core/Tools/BCI2000ViewerQt/BCI2000Viewer_/plus_96.png.res.cpp"
+#include "/Users/gooooooooooooner/Documents/bci2000-svn/build/CMakeFiles/core/Tools/BCI2000ViewerQt/BCI2000Viewer_/minus_96.png.res.cpp"
+#include "/Users/gooooooooooooner/Documents/bci2000-svn/build/CMakeFiles/core/Tools/BCI2000ViewerQt/BCI2000Viewer_/grid_96.png.res.cpp"
+#include "/Users/gooooooooooooner/Documents/bci2000-svn/build/CMakeFiles/core/Tools/BCI2000ViewerQt/BCI2000Viewer_/colorwheel_96.png.res.cpp"
+#include "/Users/gooooooooooooner/Documents/bci2000-svn/build/CMakeFiles/core/Tools/BCI2000ViewerQt/BCI2000Viewer_/light-dark_96.png.res.cpp"

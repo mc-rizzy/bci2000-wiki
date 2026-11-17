@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+<meta charset="UTF-8"/>
+<title>VisualizeBCI2000 - BCI2000 Help</title>
+<link rel='shortcut icon' href='../../rsrc/favicon.ico' />
+<style type='text/css'>
+html { font-size:95%; font-family:arial,helvetica,sans-serif }
+.printfooter { display:none }
+#tocmain { font-size:81%; font-weight:bold; color:grey; background-color:white; border:1px solid black; padding:1em; z-index:10; position:fixed; left:-1px; top:-1px; width:150px; }
+#tocmain a { color:black; text-decoration:none }
+#tocmain ul { margin:0 0 0 0.4em; padding:0.1em 0 0 0.1em; list-style-position:outside; list-style-type:disc }
+#tocmain li { text-indent:0; margin:0 0 0 1em; padding: 0 0 0 0 }
+#tocmain p { margin:0; padding:0.1em 0 0 0.1em }
+#tocmain .toc1 { margin-left:1.25em; }
+#tocmain .toc2 { margin-left:2.25em; }
+#tocmain .toc3 { margin-left:3.25em; }
+#article { font-size:91%; position:absolute; left:200px; right:0; padding:1em; margin:0 }
+</style>
+</head>
+<body>
+ <div id='tocmain'>
+ <a href='Main_Page.html'><img src='../../rsrc/bci2000logo.svg' alt='[Main Page]' /></a> <hr class="sep" /><p class="toc0"><a href="User_Tutorial%253ABCI2000_Tour.html">GettingStarted</a></p><ul></ul><p class="toc0"><a href="User_Reference%253AContents.html">User Manual</a></p><ul></ul><p class="toc0"><a href="Technical_Reference%253AContents.html">Technical Reference</a></p><ul></ul><p class="toc0"><a href="Programming_Reference%253AContents.html">Programming Manual</a></p><ul></ul><p class="toc0"><a href="Contributions%253AContents.html">Contributions</a></p><ul></ul><hr class="sep" /><p class="toc0"><a href="BCI2000_Glossary.html">BCI2000 Glossary</a></p> </div>
+ <div id='article'>
+ <h1 class = "pagetitle">VisualizeBCI2000</h1>
+ <p class = "subtitle"></p>
+ <hr class = "sep" />
+ <div id="mw-content-text" class="mw-body-content mw-content-ltr" lang="en" dir="ltr"><div class="mw-parser-output"><div class="thumb tright"><div class="thumbinner" style="width:962px;"><a href="https://www.bci2000.org/mediawiki/index.php/File:CCEP_gif.gif" class="image"><img alt="" src="../images/e/e2/CCEP_gif.gif" decoding="async" width="960" height="540" class="thumbimage" /></a>  <div class="thumbcaption"><div class="magnify"><a href="https://www.bci2000.org/mediawiki/index.php/File:CCEP_gif.gif" class="internal" title="Enlarge"></a></div>An example video showing the CCEP filter with VisualizeBCI2000.</div></div></div>
+<div style="clear: both"></div>
+<div id="toc" class="toc" role="navigation" aria-labelledby="mw-toc-heading"><input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none" /><div class="toctitle" lang="en" dir="ltr"><h2 id="mw-toc-heading">Contents</h2><span class="toctogglespan"><label class="toctogglelabel" for="toctogglecheckbox"></label></span></div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="Python_Visualizations.html#Introduction"><span class="tocnumber">1</span> <span class="toctext">Introduction</span></a></li>
+<li class="toclevel-1 tocsection-2"><a href="Python_Visualizations.html#Installation"><span class="tocnumber">2</span> <span class="toctext">Installation</span></a></li>
+<li class="toclevel-1 tocsection-3"><a href="Python_Visualizations.html#Set-up"><span class="tocnumber">3</span> <span class="toctext">Set-up</span></a></li>
+<li class="toclevel-1 tocsection-4"><a href="Python_Visualizations.html#Settings"><span class="tocnumber">4</span> <span class="toctext">Settings</span></a></li>
+<li class="toclevel-1 tocsection-5"><a href="Python_Visualizations.html#3D_Visualization"><span class="tocnumber">5</span> <span class="toctext">3D Visualization</span></a></li>
+</ul>
+</div>
+
+<h1><span class="mw-headline" id="Introduction">Introduction</span></h1>
+<p>A Python toolkit to powerfully visualize BCI2000 data in real-time. The incoming data can be pre-processed in BCI2000's pipeline, or not, then sent to python through BCI2000's <a href="User_Reference%253ASignalSharing.html" title="User Reference:SignalSharing">SignalSharing</a> feature. The data can also be visualized in 3D if combined with a <a rel="nofollow" class="external text" href="https://github.com/neurotechcenter/VERA">VERA structure (electrode localization tool)</a>. It is designed based on BCI2000's standard of modularity, therefore any of these components can be swapped out without changing the rest of the pipeline.
+</p>
+<h1><span class="mw-headline" id="Installation">Installation</span></h1>
+<p><b><a rel="nofollow" class="external text" href="https://github.com/neurotechcenter/VisualizeBCI2000">VisualizeBCI2000 can be downloaded from GitHub here</a></b>
+</p>
+<ol><li>Python 3.8+ needs to be installed. <a rel="nofollow" class="external text" href="https://www.python.org/downloads/%7C">You can download the lastest version here</a>.</li>
+<li>A couple additional packages are used in this visualization. Run the following segments using <code>pip</code> in the command line.
+<ul><li>Numpy: <code>pip install numpy</code></li>
+<li>PyQt5: <code>pip install PyQt5</code></li>
+<li>PyQtGraph 0.13.3+: <code>pip install pyqtgraph</code></li>
+<li>SciPy: <code>pip install scipy</code> (only the stats package is required)</li>
+<li>PyOpenGL: <code>pip install PyOpenGL PyOpenGL_accelerate</code></li></ul></li></ol>
+<h1><span class="mw-headline" id="Set-up">Set-up</span></h1>
+<div>
+<ol><li>Once <a rel="nofollow" class="external text" href="https://github.com/neurotechcenter/VisualizeBCI2000">VisualizeBCI2000</a> is downloaded and unzipped from Github, run <i>main.py</i> with Python. This will bring you to the main page, shown below.</li>
+<li>Next, choose your BCI2000 location, under <i>File</i>, then <i>Choose BCI2000 Location...</i></li>
+<li>Choose the filter to visualize, under <i>Filters</i></li>
+<li>Run a batch file with the chosen filter in the pipeline. For example, if CCEPFilter was chosen, you should run a batch file that uses <a href="Contributions%253ACCEPFilter.html" title="Contributions:CCEPFilter">CCEPFilter</a> as its Signal Processing module.</li>
+<li>Set config, then start. Then the filter should be visualized!</li></ol>
+<p>See the gallery below for images to follow each step.
+</p>
+<ul class="gallery mw-gallery-slideshow" data-showthumbnails="">
+		<li class="gallerybox" style="width: 435px"><div style="width: 435px">
+			<div class="thumb" style="width: 430px;"><div style="margin:15px auto;"><a href="https://www.bci2000.org/mediawiki/index.php/File:VisualizeBCI2000DefaultWorkspace.png" class="image" title="1. The initial view when main.py is run"><img alt="1. The initial view when main.py is run" src="../images/c/c3/VisualizeBCI2000DefaultWorkspace.png" decoding="async" width="179" height="120" /></a></div></div>
+			<div class="gallerytext">
+<p>1. The initial view when main.py is run
+</p>
+			</div>
+		</div></li>
+		<li class="gallerybox" style="width: 435px"><div style="width: 435px">
+			<div class="thumb" style="width: 430px;"><div style="margin:15px auto;"><a href="https://www.bci2000.org/mediawiki/index.php/File:VisualizeBCI2000OperatorLocation.png" class="image" title="2. The view after the BCI2000 location is chosen"><img alt="2. The view after the BCI2000 location is chosen" src="../images/5/5f/VisualizeBCI2000OperatorLocation.png" decoding="async" width="179" height="120" /></a></div></div>
+			<div class="gallerytext">
+<p>2. The view after the BCI2000 location is chosen
+</p>
+			</div>
+		</div></li>
+		<li class="gallerybox" style="width: 435px"><div style="width: 435px">
+			<div class="thumb" style="width: 430px;"><div style="margin:15px auto;"><a href="https://www.bci2000.org/mediawiki/index.php/File:VisualizeBCI2000FilterChosen.png" class="image" title="3. View after the desired filter is chosen"><img alt="3. View after the desired filter is chosen" src="../images/9/99/VisualizeBCI2000FilterChosen.png" decoding="async" width="87" height="120" /></a></div></div>
+			<div class="gallerytext">
+<p>3. View after the desired filter is chosen
+</p>
+			</div>
+		</div></li>
+		<li class="gallerybox" style="width: 435px"><div style="width: 435px">
+			<div class="thumb" style="width: 430px;"><div style="margin:15px auto;"><a href="https://www.bci2000.org/mediawiki/index.php/File:VisualizeBCI2000FilterChosenRearranged.png" class="image" title="Optional rearrangement of the windows"><img alt="Optional rearrangement of the windows" src="../images/c/c7/VisualizeBCI2000FilterChosenRearranged.png" decoding="async" width="230" height="120" /></a></div></div>
+			<div class="gallerytext">
+<p>Optional rearrangement of the windows
+</p>
+			</div>
+		</div></li>
+</ul>
+<p><br />
+</p>
+<h1><span class="mw-headline" id="Settings">Settings</span></h1>
+<p>These Settings are available to configure in the toolbar
+</p>
+<ul><li><b>Choose BCI2000 Location</b>: Choose the directory in which your BCI2000 resides. The folder chosen should be the main, root folder. This is mainly used to access the BCI2000Remote files, which are assumed to be located in the <i>prog</i> folder of the root directory.</li>
+<li><b>Filters</b>: The BCI2000 Signal Processing filter which sends the incoming data. Each filter requires a custom Python implementation. Currently, the only 2 filters that are available are:
+<ul><li><i><b><a href="Contributions%253ACCEPFilter.html" title="Contributions:CCEPFilter">CCEPFilter</a></b></i></li>
+<li><i><b><a href="Contributions%253APAC.html" title="Contributions:PAC">Phase-amplitude coupling (PACFilter)</a></b></i></li>
+<li><i><b>DataIOFilter</b></i>: This streams the raw data from BCI2000 and continually updates a grid of plots. This is less of a useful visualization, and more of an example for a basic visualization.</li></ul></li>
+<li><b>Data Streams</b>: Defaults to BCI2000. If other data streams are desired, these must be implemented.</li></ul>
+<h1><span class="mw-headline" id="3D_Visualization">3D Visualization</span></h1>
+<p>To enable the 3D visualization, you must input a VERA structure. VERA is an electrode localization application made to simplify electrode localization. The output of the VERA pipeline is a .mat (Matlab) structure, which is the input to be loaded into VisualizeBCI2000. In order to match the electrode names with the BCI2000 channel names, there must be a field called <i>electrodeNamesKey</i>, with columns <i>VERANames</i> and <i>EEGNames</i>. This table provides a necessary key between the two names.
+</p></div>
+<!-- 
+NewPP limit report
+Cached time: 20250820162427
+Cache expiry: 86400
+Reduced expiry: false
+Complications: [show‐toc]
+CPU time usage: 0.027 seconds
+Real time usage: 0.039 seconds
+Preprocessor visited node count: 30/1000000
+Post‐expand include size: 0/2097152 bytes
+Template argument size: 0/2097152 bytes
+Highest expansion depth: 2/100
+Expensive parser function count: 0/100
+Unstrip recursion depth: 0/20
+Unstrip post‐expand size: 2319/5000000 bytes
+-->
+<!--
+Transclusion expansion time report (%,ms,calls,template)
+100.00%    0.000      1 -total
+-->
+
+<!-- Saved in parser cache with key wikidb-bci_:pcache:idhash:2734-0!canonical and timestamp 20250820162427 and revision id 11993.
+ -->
+</div></div><div class="printfooter">
+Retrieved from "<a dir="ltr" href="http://www.bci2000.org/mediawiki/index.php?title=VisualizeBCI2000&amp;oldid=11993">http://www.bci2000.org/mediawiki/index.php?title=VisualizeBCI2000&amp;oldid=11993</a>"</div>
+ </div>
+</body>
+</html>

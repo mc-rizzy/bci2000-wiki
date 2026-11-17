@@ -1,0 +1,4 @@
+Source:Signal%20Properties int SampleBlockSize= 30 // number of samples transmitted at a time (allow_override)
+Source:Signal%20Properties int SamplingRate= 600Hz // sampling rate (allow_override)
+Application:Application%20Window int WindowLeft= 0 0 % % // screen coordinate of Application window's left edge
+Source:gUSBamp int EnableDigitalInput= 1 1 0 1 // enable digital inputs (boolean)

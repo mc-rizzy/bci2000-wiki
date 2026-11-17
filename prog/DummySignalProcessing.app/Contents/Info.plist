@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CFBundleInfoDictionaryVersion</key>
+	<string>6.0</string>
+	<key>CFBundleDevelopmentRegion</key>
+	<string>English</string>
+	<key>CFBundleExecutable</key>
+	<string>DummySignalProcessing</string>
+	<key>CFBundleIconFile</key>
+	<string>cogwheel-screen.icns</string>
+	<key>CFBundleIdentifier</key>
+	<string>org.bci2000.DummySignalProcessing.aEO7n</string>
+	<key>CFBundlePackageType</key>
+	<string>APPL</string>
+	<key>NSCameraUsageDescription</key>
+	<string>BCI2000 asks for access to a camera.</string>
+	<key>NSCameraUseContinuityCameraDeviceType</key>
+	<true/>
+	<key>NSMicrophoneUsageDescription</key>
+	<string>BCI2000 asks for access to a microphone.</string>
+</dict>
+</plist>

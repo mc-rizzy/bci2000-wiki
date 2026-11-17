@@ -1,0 +1,41 @@
+file(REMOVE_RECURSE
+  "BCI2000Export"
+  "BCI2000Export.pdb"
+  "CMakeFiles/BCI2000Export.dir/BCIReader.cpp.o"
+  "CMakeFiles/BCI2000Export.dir/BCIReader.cpp.o.d"
+  "CMakeFiles/BCI2000Export.dir/Converters/ASCIIConverter.cpp.o"
+  "CMakeFiles/BCI2000Export.dir/Converters/ASCIIConverter.cpp.o.d"
+  "CMakeFiles/BCI2000Export.dir/Converters/BrainVisionConverter.cpp.o"
+  "CMakeFiles/BCI2000Export.dir/Converters/BrainVisionConverter.cpp.o.d"
+  "CMakeFiles/BCI2000Export.dir/MainWindow.cpp.o"
+  "CMakeFiles/BCI2000Export.dir/MainWindow.cpp.o.d"
+  "CMakeFiles/BCI2000Export.dir/Users/gooooooooooooner/Documents/bci2000-svn/src/shared/bcistream/BCIStream_guiapp.cpp.o"
+  "CMakeFiles/BCI2000Export.dir/Users/gooooooooooooner/Documents/bci2000-svn/src/shared/bcistream/BCIStream_guiapp.cpp.o.d"
+  "CMakeFiles/BCI2000Export.dir/Users/gooooooooooooner/Documents/bci2000-svn/src/shared/gui/AboutBox.cpp.o"
+  "CMakeFiles/BCI2000Export.dir/Users/gooooooooooooner/Documents/bci2000-svn/src/shared/gui/AboutBox.cpp.o.d"
+  "CMakeFiles/BCI2000Export.dir/Users/gooooooooooooner/Documents/bci2000-svn/src/shared/gui/ColorListChooser.cpp.o"
+  "CMakeFiles/BCI2000Export.dir/Users/gooooooooooooner/Documents/bci2000-svn/src/shared/gui/ColorListChooser.cpp.o.d"
+  "CMakeFiles/BCI2000Export.dir/Users/gooooooooooooner/Documents/bci2000-svn/src/shared/gui/ExecutableHelp.cpp.o"
+  "CMakeFiles/BCI2000Export.dir/Users/gooooooooooooner/Documents/bci2000-svn/src/shared/gui/ExecutableHelp.cpp.o.d"
+  "CMakeFiles/BCI2000Export.dir/Users/gooooooooooooner/Documents/bci2000-svn/src/shared/utils/Qt/QtMain.cpp.o"
+  "CMakeFiles/BCI2000Export.dir/Users/gooooooooooooner/Documents/bci2000-svn/src/shared/utils/Qt/QtMain.cpp.o.d"
+  "CMakeFiles/BCI2000Export.dir/Users/gooooooooooooner/Documents/bci2000-svn/src/shared/utils/Qt/QtMessageHandler.cpp.o"
+  "CMakeFiles/BCI2000Export.dir/Users/gooooooooooooner/Documents/bci2000-svn/src/shared/utils/Qt/QtMessageHandler.cpp.o.d"
+  "CMakeFiles/BCI2000Export.dir/Users/gooooooooooooner/Documents/bci2000-svn/src/shared/utils/Settings.cpp.o"
+  "CMakeFiles/BCI2000Export.dir/Users/gooooooooooooner/Documents/bci2000-svn/src/shared/utils/Settings.cpp.o.d"
+  "CMakeFiles/BCI2000Export.dir/__/__/__/shared/utils/Qt/moc_QtMain.cpp.o"
+  "CMakeFiles/BCI2000Export.dir/__/__/__/shared/utils/Qt/moc_QtMain.cpp.o.d"
+  "CMakeFiles/BCI2000Export.dir/__/__/__/version/Version.cpp.o"
+  "CMakeFiles/BCI2000Export.dir/__/__/__/version/Version.cpp.o.d"
+  "CMakeFiles/BCI2000Export.dir/main.cpp.o"
+  "CMakeFiles/BCI2000Export.dir/main.cpp.o.d"
+  "CMakeFiles/BCI2000Export.dir/moc_MainWindow.cpp.o"
+  "CMakeFiles/BCI2000Export.dir/moc_MainWindow.cpp.o.d"
+  "__/__/__/shared/utils/Qt/moc_QtMain.cpp"
+  "moc_MainWindow.cpp"
+)
+
+# Per-language clean rules from dependency scanning.
+foreach(lang CXX)
+  include(CMakeFiles/BCI2000Export.dir/cmake_clean_${lang}.cmake OPTIONAL)
+endforeach()

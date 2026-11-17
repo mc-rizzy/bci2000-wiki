@@ -1,0 +1,75 @@
+#!/bin/bash
+# NB: as well as `chmod a+x release-BCI2000Tools`, on macOS these days you may also need to do `xattr -d com.apple.quarantine release-BCI2000Tools`
+
+# for BCI2000 developers only - automates the PyPI release process of the BCI2000Tools toolbox
+
+PACKAGEPARENT=.
+PACKAGENAME=BCI2000Tools
+MAIN=main
+
+PYPI=https://pypi.org/pypi/$PACKAGENAME
+VERSIONFILE="./$PACKAGEPARENT/$PACKAGENAME/__init__.py"
+
+THIS=`which "$0"`
+HERE=`dirname "$THIS"`
+
+function clean
+{
+	rm -rfv "$HERE/build" "$HERE/dist" "$HERE/$PACKAGEPARENT"/*.egg-info
+	#rm -rfv "$HERE/doc/_build" "$HERE/doc/auto"
+	find "$HERE" -iname '*.pyc' -exec rm -v {} \;
+}
+
+set -e  # ensure that failed commands cause this script to terminate
+
+cd $HERE
+if [[ `which python 2>/dev/null` == "" ]]
+then
+	echo "could not find 'python'"
+	exit 1
+fi
+for MODULE in build wheel twine
+do
+	echo detecting $MODULE module...
+	python -c "import $MODULE" > /dev/null 2>&1 || {
+		echo "`which python` does not have '$MODULE' installed"
+		exit 1
+	}
+done
+
+CHANGED='svn status -q'
+
+# Optional pre-release version bump:
+echo -e "\nCurrent latest release(s) on PyPI:\n"
+python -c "import requests;response=requests.get('"$PYPI"/json');print((response.status_code==200)and(response.json()['info']['version'])or('???'))"
+echo ''; read -p "Press return to edit __version__ in "$(basename "$VERSIONFILE")" : " RESPONSE
+vim "$VERSIONFILE"
+
+if [[ `$CHANGED` != ""  ]]
+then
+	echo ''
+	svn status -q
+	echo ''; read -p "Press return to see the svn diff: " RESPONSE
+	svn diff | less -S
+fi
+
+# Commit outstanding changes, possibly including the version bump just now:
+VIM=$(which vim)
+if uname | grep -iq mingw; then VIM=$(cygpath -ws "$VIM"); fi
+echo ''; if [[ `$CHANGED` != ""  ]]; then svn commit --force-interactive --editor-cmd="$VIM"; fi
+# aborting the commit with an empty message unfortunately doesn't seem to return a non-zero return code from svn that would be caught by set -e and abort the script, so:
+if [[ `$CHANGED` != ""  ]]; then exit 0; fi
+
+# Make and upload the new wheel
+clean
+python -m build --wheel
+python -m wheel tags --remove --python-tag=py2.py3 dist/*-py3-none-any.whl
+python -m twine check dist/*
+python -m twine upload dist/*
+set +x
+
+echo ''; read -p "Run cleanup ? [y]/n: " RESPONSE
+if [[ $RESPONSE == [yY] || $RESPONSE == [yY][eE][sS] || "$RESPONSE" == "" ]]
+then
+	clean
+fi

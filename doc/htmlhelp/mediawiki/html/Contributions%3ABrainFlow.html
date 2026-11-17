@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+<meta charset="UTF-8"/>
+<title>Contributions:BrainFlow - BCI2000 Help</title>
+<link rel='shortcut icon' href='../../rsrc/favicon.ico' />
+<style type='text/css'>
+html { font-size:95%; font-family:arial,helvetica,sans-serif }
+.printfooter { display:none }
+#tocmain { font-size:81%; font-weight:bold; color:grey; background-color:white; border:1px solid black; padding:1em; z-index:10; position:fixed; left:-1px; top:-1px; width:150px; }
+#tocmain a { color:black; text-decoration:none }
+#tocmain ul { margin:0 0 0 0.4em; padding:0.1em 0 0 0.1em; list-style-position:outside; list-style-type:disc }
+#tocmain li { text-indent:0; margin:0 0 0 1em; padding: 0 0 0 0 }
+#tocmain p { margin:0; padding:0.1em 0 0 0.1em }
+#tocmain .toc1 { margin-left:1.25em; }
+#tocmain .toc2 { margin-left:2.25em; }
+#tocmain .toc3 { margin-left:3.25em; }
+#article { font-size:91%; position:absolute; left:200px; right:0; padding:1em; margin:0 }
+</style>
+</head>
+<body>
+ <div id='tocmain'>
+ <a href='Main_Page.html'><img src='../../rsrc/bci2000logo.svg' alt='[Main Page]' /></a> <hr class="sep" /><p class="toc0"><a href="User_Tutorial%253ABCI2000_Tour.html">GettingStarted</a></p><ul></ul><p class="toc0"><a href="User_Reference%253AContents.html">User Manual</a></p><ul></ul><p class="toc0"><a href="Technical_Reference%253AContents.html">Technical Reference</a></p><ul></ul><p class="toc0"><a href="Programming_Reference%253AContents.html">Programming Manual</a></p><ul></ul><p class="toc0"><a href="Contributions%253AContents.html">Contributions</a></p><ul><li class="toc1"><a href="Contributions%253AADCs.html">Data Acquisition</a></li><li class="toc1"><a href="Contributions%253AFileWriters.html">File Formats</a></li><li class="toc1"><a href="Contributions%253ASignalProcessing.html">Signal Processing</a></li><li class="toc1"><a href="Contributions%253AApplications.html">Applications</a></li><li class="toc1"><a href="Contributions%253ATools.html">Tools</a></li></ul><hr class="sep" /><p class="toc0"><a href="BCI2000_Glossary.html">BCI2000 Glossary</a></p> </div>
+ <div id='article'>
+ <h1 class = "pagetitle">BrainFlow</h1>
+ <p class = "subtitle">Contributions</p>
+ <hr class = "sep" />
+ <div id="mw-content-text" class="mw-body-content mw-content-ltr" lang="en" dir="ltr"><div class="mw-parser-output"><div class="thumb tright"><div class="thumbinner" style="width:302px;"><a href="https://www.bci2000.org/mediawiki/index.php/File:Brainflowpic.png" class="image"><img alt="Brainflowpic.png" src="../images/8/8b/Brainflowpic.png" decoding="async" width="300" height="300" class="thumbimage" /></a>  <div class="thumbcaption"><div class="magnify"><a href="https://www.bci2000.org/mediawiki/index.php/File:Brainflowpic.png" class="internal" title="Enlarge"></a></div></div></div></div>
+<div id="toc" class="toc" role="navigation" aria-labelledby="mw-toc-heading"><input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none" /><div class="toctitle" lang="en" dir="ltr"><h2 id="mw-toc-heading">Contents</h2><span class="toctogglespan"><label class="toctogglelabel" for="toctogglecheckbox"></label></span></div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="Contributions%253ABrainFlow.html#Synopsis"><span class="tocnumber">1</span> <span class="toctext">Synopsis</span></a></li>
+<li class="toclevel-1 tocsection-2"><a href="Contributions%253ABrainFlow.html#Location"><span class="tocnumber">2</span> <span class="toctext">Location</span></a></li>
+<li class="toclevel-1 tocsection-3"><a href="Contributions%253ABrainFlow.html#Parameters"><span class="tocnumber">3</span> <span class="toctext">Parameters</span></a>
+<ul>
+<li class="toclevel-2 tocsection-4"><a href="Contributions%253ABrainFlow.html#BoardID"><span class="tocnumber">3.1</span> <span class="toctext">BoardID</span></a></li>
+<li class="toclevel-2 tocsection-5"><a href="Contributions%253ABrainFlow.html#RecordingChannels"><span class="tocnumber">3.2</span> <span class="toctext">RecordingChannels</span></a></li>
+<li class="toclevel-2 tocsection-6"><a href="Contributions%253ABrainFlow.html#COM"><span class="tocnumber">3.3</span> <span class="toctext">COM</span></a></li>
+<li class="toclevel-2 tocsection-7"><a href="Contributions%253ABrainFlow.html#MAC"><span class="tocnumber">3.4</span> <span class="toctext">MAC</span></a></li>
+<li class="toclevel-2 tocsection-8"><a href="Contributions%253ABrainFlow.html#IPPort"><span class="tocnumber">3.5</span> <span class="toctext">IPPort</span></a></li>
+<li class="toclevel-2 tocsection-9"><a href="Contributions%253ABrainFlow.html#SerialNumber"><span class="tocnumber">3.6</span> <span class="toctext">SerialNumber</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-10"><a href="Contributions%253ABrainFlow.html#See_also"><span class="tocnumber">4</span> <span class="toctext">See also</span></a></li>
+</ul>
+</div>
+
+<h2><span class="mw-headline" id="Synopsis">Synopsis</span></h2>
+<p>This module integrates the data aquistion capabilities from <a rel="nofollow" class="external text" href="https://brainflow.readthedocs.io/en/stable/">BrainFlow</a> into BCI2000, allowing for compatibility with several new boards, especially boards from the OpenBCI hardware project.
+</p>
+<h2><span class="mw-headline" id="Location">Location</span></h2>
+<p><a rel="nofollow" class="external free" href="http://www.bci2000.org/svn/trunk/src/contrib/SignalSource/BrainFlow">http://www.bci2000.org/svn/trunk/src/contrib/SignalSource/BrainFlow</a>
+</p>
+<h2><span class="mw-headline" id="Parameters">Parameters</span></h2>
+<h3><span class="mw-headline" id="BoardID">BoardID</span></h3>
+<p>Identifier for the board in use, compatible with any board able to be used with BrainFlow.
+BoardIDs are listed the parameter's commentary, and boards are displayed by name in the parameter GUI.
+</p>
+<h3><span class="mw-headline" id="RecordingChannels">RecordingChannels</span></h3>
+<p>Sets which board channels will be used for data acquisition. Some boards will not have all listed channel types, in which case no data will be collected from such types. If channels are found and <b>ChannelNames</b> is set to auto, listed channels will be given their designated names.
+</p><p><br />
+<b>The following information might not be needed for specific boards. Search for your board <a rel="nofollow" class="external text" href="https://brainflow.readthedocs.io/en/stable/SupportedBoards.html">here</a> to see which parameters are necessary.</b>&#160;
+</p>
+<h3><span class="mw-headline" id="COM">COM</span></h3>
+<p>Specifies the port the device is connected to (this must be found by the user--the program will not search ports to find which the device is connected to. Open your system's device manager to determine this) if needed. If not needed, leave as auto.
+</p>
+<h3><span class="mw-headline" id="MAC">MAC</span></h3>
+<p>Specifies the MAC address of the device if needed. If not needed, leave as auto.
+</p>
+<h3><span class="mw-headline" id="IPPort">IPPort</span></h3>
+<p>Specifies the address of an IP port if needed. If not needed, leave as auto.
+</p>
+<h3><span class="mw-headline" id="SerialNumber">SerialNumber</span></h3>
+<p>Specifies the serial number of the device if needed. If not needed, leave as auto.
+</p>
+<h2><span class="mw-headline" id="See_also">See also</span></h2>
+<p><a href="User_Reference%253AFilters.html" title="User Reference:Filters">User Reference:Filters</a>, <a href="Contributions%253AADCs.html" title="Contributions:ADCs">Contributions:ADCs</a>
+</p>
+<!-- 
+NewPP limit report
+Cached time: 20250820182516
+Cache expiry: 86400
+Reduced expiry: false
+Complications: [show‐toc]
+CPU time usage: 0.020 seconds
+Real time usage: 0.025 seconds
+Preprocessor visited node count: 34/1000000
+Post‐expand include size: 15/2097152 bytes
+Template argument size: 0/2097152 bytes
+Highest expansion depth: 2/100
+Expensive parser function count: 0/100
+Unstrip recursion depth: 0/20
+Unstrip post‐expand size: 0/5000000 bytes
+-->
+<!--
+Transclusion expansion time report (%,ms,calls,template)
+100.00%    0.000      1 -total
+-->
+
+<!-- Saved in parser cache with key wikidb-bci_:pcache:idhash:2627-0!canonical and timestamp 20250820182516 and revision id 11687.
+ -->
+</div></div><div class="printfooter">
+Retrieved from "<a dir="ltr" href="http://www.bci2000.org/mediawiki/index.php?title=Contributions:BrainFlow&amp;oldid=11687">http://www.bci2000.org/mediawiki/index.php?title=Contributions:BrainFlow&amp;oldid=11687</a>"</div>
+ </div>
+</body>
+</html>

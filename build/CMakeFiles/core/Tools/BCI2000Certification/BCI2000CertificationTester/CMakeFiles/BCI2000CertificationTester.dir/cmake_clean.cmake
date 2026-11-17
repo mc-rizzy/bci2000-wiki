@@ -1,0 +1,43 @@
+file(REMOVE_RECURSE
+  "BCI2000CertificationTester"
+  "BCI2000CertificationTester.pdb"
+  "CMakeFiles/BCI2000CertificationTester.dir/CertLauncher.cpp.o"
+  "CMakeFiles/BCI2000CertificationTester.dir/CertLauncher.cpp.o.d"
+  "CMakeFiles/BCI2000CertificationTester.dir/CertLauncherGui.cpp.o"
+  "CMakeFiles/BCI2000CertificationTester.dir/CertLauncherGui.cpp.o.d"
+  "CMakeFiles/BCI2000CertificationTester.dir/Users/gooooooooooooner/Documents/bci2000-svn/src/core/Tools/BCI2000Certification/Property.cpp.o"
+  "CMakeFiles/BCI2000CertificationTester.dir/Users/gooooooooooooner/Documents/bci2000-svn/src/core/Tools/BCI2000Certification/Property.cpp.o.d"
+  "CMakeFiles/BCI2000CertificationTester.dir/Users/gooooooooooooner/Documents/bci2000-svn/src/core/Tools/BCI2000Certification/TaskType.cpp.o"
+  "CMakeFiles/BCI2000CertificationTester.dir/Users/gooooooooooooner/Documents/bci2000-svn/src/core/Tools/BCI2000Certification/TaskType.cpp.o.d"
+  "CMakeFiles/BCI2000CertificationTester.dir/Users/gooooooooooooner/Documents/bci2000-svn/src/shared/bcistream/BCIStream_guiapp.cpp.o"
+  "CMakeFiles/BCI2000CertificationTester.dir/Users/gooooooooooooner/Documents/bci2000-svn/src/shared/bcistream/BCIStream_guiapp.cpp.o.d"
+  "CMakeFiles/BCI2000CertificationTester.dir/Users/gooooooooooooner/Documents/bci2000-svn/src/shared/config/ModuleInventory.cpp.o"
+  "CMakeFiles/BCI2000CertificationTester.dir/Users/gooooooooooooner/Documents/bci2000-svn/src/shared/config/ModuleInventory.cpp.o.d"
+  "CMakeFiles/BCI2000CertificationTester.dir/Users/gooooooooooooner/Documents/bci2000-svn/src/shared/gui/AboutBox.cpp.o"
+  "CMakeFiles/BCI2000CertificationTester.dir/Users/gooooooooooooner/Documents/bci2000-svn/src/shared/gui/AboutBox.cpp.o.d"
+  "CMakeFiles/BCI2000CertificationTester.dir/Users/gooooooooooooner/Documents/bci2000-svn/src/shared/gui/ColorListChooser.cpp.o"
+  "CMakeFiles/BCI2000CertificationTester.dir/Users/gooooooooooooner/Documents/bci2000-svn/src/shared/gui/ColorListChooser.cpp.o.d"
+  "CMakeFiles/BCI2000CertificationTester.dir/Users/gooooooooooooner/Documents/bci2000-svn/src/shared/gui/ExecutableHelp.cpp.o"
+  "CMakeFiles/BCI2000CertificationTester.dir/Users/gooooooooooooner/Documents/bci2000-svn/src/shared/gui/ExecutableHelp.cpp.o.d"
+  "CMakeFiles/BCI2000CertificationTester.dir/Users/gooooooooooooner/Documents/bci2000-svn/src/shared/utils/Qt/QtMain.cpp.o"
+  "CMakeFiles/BCI2000CertificationTester.dir/Users/gooooooooooooner/Documents/bci2000-svn/src/shared/utils/Qt/QtMain.cpp.o.d"
+  "CMakeFiles/BCI2000CertificationTester.dir/Users/gooooooooooooner/Documents/bci2000-svn/src/shared/utils/Qt/QtMessageHandler.cpp.o"
+  "CMakeFiles/BCI2000CertificationTester.dir/Users/gooooooooooooner/Documents/bci2000-svn/src/shared/utils/Qt/QtMessageHandler.cpp.o.d"
+  "CMakeFiles/BCI2000CertificationTester.dir/Users/gooooooooooooner/Documents/bci2000-svn/src/shared/utils/Settings.cpp.o"
+  "CMakeFiles/BCI2000CertificationTester.dir/Users/gooooooooooooner/Documents/bci2000-svn/src/shared/utils/Settings.cpp.o.d"
+  "CMakeFiles/BCI2000CertificationTester.dir/__/__/__/__/shared/utils/Qt/moc_QtMain.cpp.o"
+  "CMakeFiles/BCI2000CertificationTester.dir/__/__/__/__/shared/utils/Qt/moc_QtMain.cpp.o.d"
+  "CMakeFiles/BCI2000CertificationTester.dir/__/__/__/__/version/Version.cpp.o"
+  "CMakeFiles/BCI2000CertificationTester.dir/__/__/__/__/version/Version.cpp.o.d"
+  "CMakeFiles/BCI2000CertificationTester.dir/main.cpp.o"
+  "CMakeFiles/BCI2000CertificationTester.dir/main.cpp.o.d"
+  "CMakeFiles/BCI2000CertificationTester.dir/moc_CertLauncherGui.cpp.o"
+  "CMakeFiles/BCI2000CertificationTester.dir/moc_CertLauncherGui.cpp.o.d"
+  "__/__/__/__/shared/utils/Qt/moc_QtMain.cpp"
+  "moc_CertLauncherGui.cpp"
+)
+
+# Per-language clean rules from dependency scanning.
+foreach(lang CXX)
+  include(CMakeFiles/BCI2000CertificationTester.dir/cmake_clean_${lang}.cmake OPTIONAL)
+endforeach()
